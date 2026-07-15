@@ -75,20 +75,12 @@ regions_gr_all <- c(regions_gr, amplicon_gr)
 
 message("Regions loaded:")
 print(data.frame(
-  chr   = as.character(seqnames(regions_gr)),
-  start = start(regions_gr),
-  end   = end(regions_gr),
-  name  = mcols(regions_gr)$region_label
+  chr   = as.character(seqnames(regions_gr_all)),
+  start = start(regions_gr_all),
+  end   = end(regions_gr_all),
+  name  = mcols(regions_gr_all)$region_label,
+  type  = mcols(regions_gr_all)$region_type
 ))
-
-message("Regions loaded:")
-print(data.frame(
-  chr   = as.character(seqnames(regions_gr)),
-  start = start(regions_gr),
-  end   = end(regions_gr),
-  name  = mcols(regions_gr)$region_label
-))
-
 
 # Read CpG tables and convert to GRanges
 
